@@ -2,6 +2,7 @@ package com.example.unitconverters;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,10 +11,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class UnitClass extends AppCompatActivity {
     Spinner sp1,sp2;
     EditText ed1;
     Button b1;
+    private Button btnUnitBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
         sp1 = findViewById(R.id.spfrom);
         sp2 = findViewById(R.id.spTo);
         b1 = findViewById(R.id.btn1);
+        btnUnitBack = findViewById(R.id.btnUnitBack);
+
+        btnUnitBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMainMenu();
+            }
+        });
 
         String[] from = {"Grams","Yards","Centimeters","Kilometers","Kilograms","Inches"};
         ArrayAdapter address = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,from);
@@ -67,13 +77,13 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"In Meters " + test.toString(), Toast.LENGTH_SHORT).show();
 
                 }
-
-
-
-
             }
         });
 
 
+    }
+    public void openMainMenu() {
+        Intent intent = new Intent(this, Selection.class);
+        startActivity(intent);
     }
 }

@@ -7,16 +7,16 @@
     android:background="@drawable/wall"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".UnitClass"
     tools:ignore="ExtraText">
 
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
 
         >
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -48,10 +48,10 @@
             android:id="@+id/txtAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
             android:ems="10"
+            android:inputType="numberDecimal"
 
-            android:inputType="numberDecimal" />
+            android:textColor="#FFFFFF" />
 
 
     </LinearLayout>
@@ -119,11 +119,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Convert here"
+            android:backgroundTint="#48c068"
             android:textColor="#FFE91E" />
-
 
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btnUnitBack"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#48c068"
+        android:text="Back"
+        android:textColor="#FFE91E" />
+
 
 </LinearLayout>
+
+
